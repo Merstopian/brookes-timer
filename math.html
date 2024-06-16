@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 hour 00 minutes exam timer</title>
+    <link rel="stylesheet" href="math.css">
+</head>
+<body onload="realtimeClock()">
+    <a href="index.html" title="Return to main page">
+        <img src="arrow-left_10023695.png" id="backarrow" style="height: 3%; width: 3%; margin: 2%">
+    </a> 
+    <section class="realtime">
+        <h3>Local time</h3>
+        <div id="clock"></div>
+    </section>
+
+    <p id="countdown">1:00:00</p> 
+
+    <img id="scale" src="drawing.svg">
+
+    <img id="pointer" class="" src="PointerPNG.png">
+
+    <table class="center-table" bgcolor="black" id="time-table">
+        <tr bgcolor="grey">
+            <th id="time-table-start">Start</th>
+            <th id="time-table-30">30 Minutes</th>
+            <th id="time-table-5">5 Minutes</th>
+            <th id="time-table-end">End</th>
+        </tr>
+    </table>   <!--MAKE TABLE TAKE INPUT BASED ON REAL TIME WHEN START BUTTON GETS CLICKED-->
+    <section class="spacing"></section>
+    <div class="buttonContainer">
+        <button id="button" class="button" onclick="savetime()">Start</button>
+        <button id="restart" class="button" onclick="location.href = 'math.html'">Restart</button>  
+    </div>
+    <div id="saved-time"></div>
+    <a href="mailto:arsenii.tsvetkov@moscow.brookes.org" target="_self" 
+    title="report problem via email" style="position: fixed; bottom: 10px; left: 10px;">Report problem</a>
+    <script src="math.js"></script>
+</body>
+</html>
+
+
+<!--        <tr bgcolor="lightgrey" align="center">
+                <td></td>
+                <td>09:10</td>
+                <td>09:35</td>
+                <td>09:40</td>
+            </tr>                                         -->

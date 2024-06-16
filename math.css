@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin+Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+#backarrow:hover {
+    scale: 120%;
+}
+
+p {
+    position: relative;
+    display: inline-flex;
+    font-size: 350px;
+    width: 100%;
+    /*height: 65vh;*/
+    margin: 0;
+    background: (#fff);
+    align-items: center;
+    justify-content: center;
+}
+
+
+.button {
+    text-decoration: none;
+    width: auto;
+    position: relative;
+    margin: auto;
+    margin-top: 1%;
+    display: block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #000;
+    font-size: 1.5em;
+}
+
+.center-table {
+    margin-left: auto;
+    margin-right: auto;
+    scale: 130%;
+}
+
+th, td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+#scale {
+    display: block;
+    margin: auto;
+    width: 65%;
+}
+
+#pointer {
+    height: 3%;
+    width: 3%;
+    padding-bottom: 2%;
+    margin-left: 16%;           /* margin-left 16% to 81% */
+}
+
+.animation {
+    animation-name: progress;
+    animation-duration: 3600s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes progress {
+    from {
+        margin-left: 16%;
+    }
+    to {
+        margin-left: 81%;
+    }
+}
+
+.realtime {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 70px;
+    padding-bottom: 2%;
+}
+
+.spacing {
+    padding-top: 1%;     /* to create spacing between start button and table */
+}

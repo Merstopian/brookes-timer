@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin+Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    min-height: 100vh;
+    background: linear-gradient(#12A1F7,#fff);
+    text-align: center;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+header .logo
+{
+    /*color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;*/
+    z-index: 3;
+}
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 7%;
+}
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    /* background-color: #000; */
+    border-radius: 20px;  /* for creating rounded edges of white background when hovering over the button */
+}
+header ul li a:hover ,
+header ul li a.active
+{
+    background: #fff;
+    color: #000;
+} /* for creating white background when hovering over button */
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;  
+}
+/* section::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: #12A1F7; 
+    z-index: 10000;
+    mix-blend-mode: color;          
+} */
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/*section h2
+{
+    margin-top: 8.7%;
+}*/
+
+#text
+{
+    position: absolute;
+    color: #fff;
+    /* width: 1290px; */
+    white-space: nowrap;
+    font-size: 7em;
+    z-index: 1;
+    margin-bottom: 16%;
+}
+
+#field
+{
+    z-index: 2;
+}
+#btn
+{
+    text-decoration: none;
+    /* position: relative; */
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #000;
+    font-size: 1.5em;
+    z-index: 2;
+    transform: translateY(100px);
+}
+
+.sec a{
+    z-index: 3;
+    text-decoration: none;
+    /*padding-top: 25%; */
+    display: block;
+    margin: auto;
+    transform: translateY(500px);
+
+}
+
+.sec a:hover {
+    color: red;
+}
+
+#clock {
+    width: 100%;
+    position: absolute;
+    font-size: 9vw;
+    color: white;
+    text-align: center;
+    z-index: 100000;
+}
+
+
+/*.sec img
+{
+    height: auto; 
+    width: 100%;
+    z-index: 1;
+}
+.sec input
+{
+    position: relative;
+    /* background-color: rgb(219, 255, 0);
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px; */
+    /*z-index: 2;
+}  */

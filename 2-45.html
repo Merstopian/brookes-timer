@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 hour 45 minutes exam timer</title>          <!--CHANGE 1-->
+    <link rel="stylesheet" href="2-45.css">      <!--CHANGE 2-->
+</head>
+<body onload="realtimeClock()">
+    <a href="index.html" title="Return to main page">
+        <img src="arrow-left_10023695.png" id="backarrow" style="height: 3%; width: 3%; margin: 2%">
+    </a> 
+    <section class="realtime">
+        <h3>Local time</h3>
+        <div id="clock"></div>
+    </section>
+
+    <p id="countdown">2:45:00</p>                       <!--CHANGE 3-->
+
+    <img id="scale" src="2-45.svg">                  <!--CHANGE 4-->
+
+    <img id="pointer" class="" src="PointerPNG.png">
+
+    <table class="center-table" bgcolor="black" id="time-table">
+        <tr bgcolor="grey">
+            <th id="time-table-start">Start</th>
+            <th id="time-table-30">30 Minutes</th>
+            <th id="time-table-5">5 Minutes</th>
+            <th id="time-table-end">End</th>
+        </tr>
+    </table>   
+    <section class="spacing"></section>
+    <div class="buttonContainer">
+        <button id="button" class="button" onclick="savetime()">Start</button>
+        <button id="restart" class="button" onclick="location.href = '2-45.html'">Restart</button>   <!--CHANGE 5-->
+    </div>
+    <div id="saved-time"></div>
+    <a href="mailto:arsenii.tsvetkov@moscow.brookes.org" target="_self" 
+    title="report problem via email" style="position: fixed; bottom: 10px; left: 10px;">Report problem</a>
+    <script src="2-45.js"></script>                                         <!--CHANGE 6-->
+</body>
+</html>
