@@ -36,6 +36,12 @@ function realtimeClock() {
             minutes1 = minutes1 - 60;
             console.log('30 minutes have been shifted DOUBLE');
             hours1 = hours1 + 1;
+
+            if(minutes1 > 59) {
+                minutes1 = minutes1 - 60;
+                console.log('30 minutes have been shifted TRIPLE');
+                hours1 = hours1 + 1;
+            }
         } 
     } 
 
@@ -69,6 +75,12 @@ function realtimeClock() {
             minutes2 = minutes2 - 60;
             console.log('55 minutes have been shifted DOUBLE');
             hours2 = hours2 + 1;
+
+            if(minutes2 > 59) {
+                minutes2 = minutes2 - 60;
+                console.log('55 minutes have been shifted TRIPLE');
+                hours2 = hours2 + 1;
+            }
         }
     } 
 
@@ -103,6 +115,12 @@ function realtimeClock() {
             minutes3 = minutes3 - 60;
             console.log('60 minutes have been shifted DOUBLE');
             hours3 = hours3 + 1;
+
+            if(minutes3 > 59) {
+                minutes3 = minutes3 - 60;
+                console.log('60 minutes have been shifted TRIPLE');
+                hours3 = hours3 + 1;
+            }
         }
     } 
 
