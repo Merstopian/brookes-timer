@@ -57,6 +57,44 @@ function realtimeClock() {
     result30 = hours1 + " : " + minutes1 + " : " + seconds1;
 
 
+// for ADDITIONAL TIME 30 minute warning
+    var rtClock1AT = new Date();
+
+    var hours1AT = rtClock1AT.getHours();
+    var minutes1AT = rtClock1AT.getMinutes() + 139;                  //CHANGE 1.1: (total minutes * 1.25) - 30; and rounded
+    var seconds1AT = rtClock1AT.getSeconds();
+
+
+    if(minutes1AT > 59) {
+        minutes1AT = minutes1AT - 60;
+        console.log('1');
+        hours1AT = hours1AT + 1;
+
+        if(minutes1AT > 59) {
+            minutes1AT = minutes1AT - 60;
+            console.log('1.1');
+            hours1AT = hours1AT + 1;
+
+            if(minutes1AT > 59) {
+                minutes1AT = minutes1AT - 60;
+                console.log('1.2');
+                hours1AT = hours1AT + 1;
+            }
+        }
+    } 
+
+    if(hours1AT > 23) {
+        console.log('2');
+        hours1AT = hours1AT - 24;
+    } 
+
+    hours1AT = ("0" + hours1AT).slice(-2);
+    minutes1AT = ("0" + minutes1AT).slice(-2);
+    seconds1AT = ("0" + seconds1AT).slice(-2);
+
+    result30AT = hours1AT + " : " + minutes1AT + " : " + seconds1AT;
+
+
 
 // for 5 minute warning
     var rtClock2 = new Date();
@@ -94,6 +132,44 @@ function realtimeClock() {
     seconds2 = ("0" + seconds2).slice(-2);
 
     result5 = hours2 + " : " + minutes2 + " : " + seconds2;
+
+
+// for ADDITIONAL TIME 5 minute warning
+    var rtClock2AT = new Date();
+
+    var hours2AT = rtClock2AT.getHours();
+    var minutes2AT = rtClock2AT.getMinutes() + 164;              //CHANGE 2.1: (total minutes * 1.25) - 5; and rounded
+    var seconds2AT = rtClock2AT.getSeconds();
+
+
+    if(minutes2AT > 59) {
+        minutes2AT = minutes2AT - 60;
+        console.log('3');
+        hours2AT = hours2AT + 1;
+
+        if(minutes2AT > 59) {
+            minutes2AT = minutes2AT - 60;
+            console.log('3.1');
+            hours2AT = hours2AT + 1;
+
+            if(minutes2AT > 59) {
+                minutes2AT = minutes2AT - 60;
+                console.log('3.2');
+                hours2AT = hours2AT + 1;
+            }
+        }
+    } 
+
+    if(hours2AT > 23) {
+        console.log('4');
+        hours2AT = hours2AT - 24;
+    } 
+
+    hours2AT = ("0" + hours2AT).slice(-2);
+    minutes2AT = ("0" + minutes2AT).slice(-2);
+    seconds2AT = ("0" + seconds2AT).slice(-2);
+
+    result5AT = hours2AT + " : " + minutes2AT + " : " + seconds2AT;
 
 
 
@@ -135,14 +211,63 @@ function realtimeClock() {
 
     resultEND = hours3 + " : " + minutes3 + " : " + seconds3;
 
-}
 
-function savetime() {
+// for ADDITIONAL TIME END warning
+    var rtClock3AT = new Date();
+
+    var hours3AT = rtClock3AT.getHours();
+    var minutes3AT = rtClock3AT.getMinutes() + 169;               //CHANGE 3.1: (total minutes * 1.25); and rounded
+    var seconds3AT = rtClock3AT.getSeconds();
+
+
+    if(minutes3AT > 59) {
+        minutes3AT = minutes3AT - 60;
+        console.log('5');
+        hours3AT = hours3AT + 1;
+
+        if(minutes3AT > 59) {
+            minutes3AT = minutes3AT - 60;
+            console.log('5.1');
+            hours3AT = hours3AT + 1;
+
+            if(minutes3AT > 59) {
+                minutes3AT = minutes3AT - 60;
+                console.log('5.2');
+                hours3AT = hours3AT + 1;
+            }
+        }
+    } 
+
+    if(hours3AT > 23) {
+        console.log('6');
+        hours3AT = hours3AT - 24;
+    } 
+
+    hours3AT = ("0" + hours3AT).slice(-2);
+    minutes3AT = ("0" + minutes3AT).slice(-2);
+    seconds3AT = ("0" + seconds3AT).slice(-2);
+
+    resultENDAT = hours3AT + " : " + minutes3AT + " : " + seconds3AT;
+
+}
+//--------------------------------------------------------------------------------------------------
+function savetime() {                                                     //Change 4.1 - copy all sections from line and replace
     var currentTimeStart = document.getElementById('clock').innerHTML;
     var table = document.getElementById('time-table');
 
     var newRow = table.insertRow(-1);
-    var newCell = newRow.insertCell(0);
+    var newRowExtra = table.insertRow(-1);                        
+
+//insert Standard label                                          
+    var newCellTest = newRow.insertCell(0);                
+
+    newCellTest.textContent = "Standard";
+
+    newCellTest.align = "center";
+    newRow.bgColor = "lightgrey";
+
+// insert Start time in table
+    var newCell = newRow.insertCell(1);
 
     newCell.textContent = currentTimeStart;
 
@@ -155,7 +280,7 @@ function savetime() {
     var currentTime30 = result30;
     var table = document.getElementById('time-table');
 
-    var newCell30 = newRow.insertCell(1);
+    var newCell30 = newRow.insertCell(2);
 
     newCell30.textContent = currentTime30;
 
@@ -168,7 +293,7 @@ function savetime() {
     var currentTime5 = result5;
     var table = document.getElementById('time-table');
 
-    var newCell5 = newRow.insertCell(2);
+    var newCell5 = newRow.insertCell(3);
 
     newCell5.textContent = currentTime5;
 
@@ -181,7 +306,7 @@ function savetime() {
     var currentTimeEND = resultEND;
     var table = document.getElementById('time-table');
 
-    var newCellEND = newRow.insertCell(3);
+    var newCellEND = newRow.insertCell(4);
 
     newCellEND.textContent = currentTimeEND;
 
@@ -189,7 +314,65 @@ function savetime() {
     newRow.bgColor = "lightgrey";
 
 
-}
+
+    
+// insert Additional Time label                                       
+    var table = document.getElementById('time-table');
+
+    var newCellTest1 = newRowExtra.insertCell(0);
+
+    newCellTest1.textContent = "Additional Time";
+
+    newCellTest1.align = "center";
+    newRowExtra.bgColor = "lightgrey";
+
+// insert Start time in table row 2
+    var newCellExtra = newRowExtra.insertCell(1);
+
+    newCellExtra.textContent = currentTimeStart;
+
+    newCell.align = "center";
+    newRow.bgColor = "lightgrey";
+
+
+// insert ADDITIONAL TIME 30 minute warning in table
+    var currentTime30AT = result30AT;
+    var table = document.getElementById('time-table');
+
+    var newCell30AT = newRowExtra.insertCell(2);
+
+    newCell30AT.textContent = currentTime30AT;
+
+    newCell30AT.align = "center";
+    newRow.bgColor = "lightgrey";
+
+
+// insert ADDITIONAL TIME 5 minute warning in table
+    var currentTime5AT = result5AT;
+    var table = document.getElementById('time-table');
+
+    var newCell5AT = newRowExtra.insertCell(3);
+
+    newCell5AT.textContent = currentTime5AT;
+
+    newCell5AT.align = "center";
+    newRow.bgColor = "lightgrey";
+
+
+// insert ADDITIONAL TIME END warning in table
+    var currentTimeENDAT = resultENDAT;
+    var table = document.getElementById('time-table');
+
+    var newCellENDAT = newRowExtra.insertCell(4);
+
+    newCellENDAT.textContent = currentTimeENDAT;
+
+    newCellENDAT.align = "center";
+    newRow.bgColor = "lightgrey";
+
+
+}       
+
 
 let btn = document.querySelector('button');
 
