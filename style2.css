@@ -148,7 +148,7 @@ section img
     width: 100%;
     position: absolute;
     font-size: 9vw;
-    color: black;
+    color: rgb(19, 166, 246);
     text-align: center;
     z-index: 100000;
 }
